@@ -20,4 +20,5 @@ public interface Userinfodao {
 
     public int deleteUser(String uid);
 
+
 }
