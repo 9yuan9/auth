@@ -3,7 +3,7 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <typeAlias type="entity.UrInfo" alias="UrInfo"/>
+        <typeAlias type="com.hzit.entity.UrInfo" alias="UrInfo"/>
     </typeAliases>
 
     <environments default="development">
@@ -19,6 +19,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="dao/CardInfoDaoMapper.xml" />
+        <mapper resource="com/hzit/dao/UrInfoDaoMapper.xml" />
     </mappers>
 </configuration>
