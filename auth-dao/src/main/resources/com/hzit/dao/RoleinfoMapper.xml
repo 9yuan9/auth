@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 标签 用于指定配置文件所属的接口名，通过 namespace来指定 -->
+
+<mapper namespace="com.hzit.dao.RoleinfoDao">
+
+    <!-- select 标签专门指定查询方法,其中 id属性代表方法名
+        parameterType 代表方法的参数数据类型
+        resultType:代表方法的返回的集合中的元素类型
+    -->
+    <select id="findAll" resultType="com.hzit.entity.Roleinfo">
+        select * from roleinfo
+    </select>
+    <select id="findByRoleId" parameterType="String" resultType="com.hzit.entity.Roleinfo">
+        select * from roleinfo where rid=#{rid}
+    </select>
+
+    <insert id="insertRole" parameterType="com.hzit.entity.Roleinfo">
+        insert into roleinfo values(null,#{rname})
+    </insert>
+
+    <update id="updateRole" parameterType="com.hzit.entity.Roleinfo">
+        update roleinfo set rname=#{rname} where rid=#{rid}
+    </update>
+
+    <delete id="deleteRole" parameterType="String">
+        delete from roleinfo where rid=#{rid}
+    </delete>
+</mapper>
