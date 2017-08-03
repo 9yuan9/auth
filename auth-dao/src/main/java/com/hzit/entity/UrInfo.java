@@ -30,4 +30,12 @@ public class UrInfo {
     public void setRid(int rid) {
         this.rid = rid;
     }
+
+    @Override
+    public String toString() {
+        return "UrInfo{" +
+                "uid=" + uid +
+                ", rid=" + rid +
+                '}';
+    }
 }
