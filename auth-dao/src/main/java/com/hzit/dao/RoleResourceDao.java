@@ -1,6 +1,6 @@
 package com.hzit.dao;
 
-import com.hzit.entity.Roleinfo;
+import com.hzit.entity.RoleResource;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import java.util.List;
  * |  @description
  * +---------------------------------Oooo---------------------------------------+
  */
-public interface RoleinfoDao {
-    public List<Roleinfo> findAll();
-    public Roleinfo findByRoleId(String roleId);
-    public int addRole(Roleinfo roleinfo);
-    public int updateRole(Roleinfo roleinfo);
-    public int deleteRole(String roleId);
+public interface RoleResourceDao {
+    public List<RoleResource> findAll();
+    public RoleResource findByRoleid(int roleid);
+    public RoleResource findByResourceid(int resourceid);
+    public int update(RoleResource roleResource);
+    public int delete(String roleid);
 }
