@@ -3,7 +3,7 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <typeAlias type="entity.CardInfo" alias="CardInfo"/>
+        <typeAlias type="entity.UrInfo" alias="UrInfo"/>
     </typeAliases>
 
     <environments default="development">

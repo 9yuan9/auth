@@ -1,3 +1,8 @@
+package com.hzit.dao;
+
+
+import com.hzit.entity.Userinfo;
+
 import java.util.List;
 
 /**

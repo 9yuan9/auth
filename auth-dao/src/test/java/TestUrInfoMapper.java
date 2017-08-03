@@ -1,9 +1,3 @@
-package com.hzit.dao;
-
-import com.hzit.entity.UrInfo;
-
-import java.util.List;
-
 /**
  * 　　  　  　           \\\|///
  * 　　　 　  　   \\　.-.-　//
@@ -11,15 +5,10 @@ import java.util.List;
  * +-------oOOo-----( _ )-----oOOo--------------------------------------------+
  * |　@author 谢树源　　　　　                                                                 　|
  * |　@author 深圳合众艾特信息技术有限公司                                                   |
- * |　@create 2017年08月03日 - 17:28
- * |    @description   用户角色关联表接口
+ * |　@create 2017年08月03日 - 18:41
+ * |    @description   测试Ur映射配置
  * +---------------------------------Oooo---------------------------------------+
  */
-public interface UrInfoDao {
-    public List<UrInfo> findAll();
-    public UrInfo findByUid(String uid);
-    public UrInfo findByRid(String rid);
-    public int insertUid(UrInfo urinfo);
-    public int updateUid(UrInfo urinfo);
-    public int deleteUid(String uid);
+public class TestUrInfoMapper {
+
 }

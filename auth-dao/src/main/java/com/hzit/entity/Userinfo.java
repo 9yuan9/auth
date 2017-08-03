@@ -1,3 +1,4 @@
+package com.hzit.entity;
 /**
  * 　　  　  　           \\\|///
  * 　　　 　  　   \\　.-.-　//

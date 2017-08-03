@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UrInfoDao">
+    <select id="findAll"  parameterType="int"
+            resultType="UrInfo">
+        select * from urinfo
+    </select>
+    <select id="findByUid" parameterType="String" resultType="UrInfo">
+        select * from urinfo where uid=#{Uid}
+    </select>
+    <select id="findByRid" parameterType="String" resultType="UrInfo">
+        select * from urinfo where rid=#{rid}
+    </select>
+    <insert id="insertUid" parameterType="UrInfo">
+        insert into urinfo values(#{uid},#{rid})
+    </insert>
+    <update id="updateUid" parameterType="UrInfo">
+        update urinfo set uid=#{Uid} where cardId=#{Uid}
+    </update>
+    <delete id="deleteUid" parameterType="String">
+        delete from urinfo where uid=#{Uid}
+    </delete>
+</mapper>
