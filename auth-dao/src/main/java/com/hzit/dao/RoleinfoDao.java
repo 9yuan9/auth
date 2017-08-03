@@ -1,6 +1,6 @@
-package hzit.dao;
+package com.hzit.dao;
 
-import hzit.entity.Roleinfo;
+import com.hzit.entity.Roleinfo;
 
 import java.util.List;
 
