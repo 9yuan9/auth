@@ -15,7 +15,7 @@
         select * from roleinfo where rid=#{rid}
     </select>
 
-    <insert id="insertRole" parameterType="com.hzit.entity.Roleinfo">
+    <insert id="addRole" parameterType="com.hzit.entity.Roleinfo">
         insert into roleinfo values(null,#{rname})
     </insert>
 

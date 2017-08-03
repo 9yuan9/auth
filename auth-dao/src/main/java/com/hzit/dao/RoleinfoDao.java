@@ -10,7 +10,7 @@ import java.util.List;
 public interface RoleinfoDao {
     public List<Roleinfo> findAll();
     public Roleinfo findByRoleId(String roleId);
-    public int insertRole(Roleinfo roleinfo);
+    public int addRole(Roleinfo roleinfo);
     public int updateRole(Roleinfo roleinfo);
     public int deleteRole(String roleId);
 }
