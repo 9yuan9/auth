@@ -1,4 +1,4 @@
-package hzit.entity;
+package com.hzit.entity;
 
 /**
  * +-------oOOo-----( _ )-----oOOo--------------------------------------------+
