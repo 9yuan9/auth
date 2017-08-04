@@ -1,7 +1,6 @@
-package com.hzit.web;
+package com.hzit.servlet;
 
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.dao.UrInfoDao;
 import com.hzit.dao.Userinfodao;
 import com.hzit.entity.Userinfo;
 import org.apache.ibatis.session.SqlSession;
