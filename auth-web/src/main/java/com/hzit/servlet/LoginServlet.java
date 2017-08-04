@@ -13,6 +13,8 @@ import java.util.List;
  * Created by Administrator on 2017/8/4.
  */
 public class LoginServlet extends javax.servlet.http.HttpServlet {
+    Userinfodao dao = SqlSessionHelper.getSqlSession().getMapper(Userinfodao.class);
+
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
@@ -22,8 +24,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         PrintWriter out=response.getWriter();
         String name=request.getParameter("cardID");
         String pwd=request.getParameter("password");
-        SqlSession session= SqlSessionHelper.getSqlSession();
-        Userinfodao dao=session.getMapper(Userinfodao.class);
         List<Userinfo> user=dao.findUser();
         for(Userinfo u:user){
             out.println(u);
