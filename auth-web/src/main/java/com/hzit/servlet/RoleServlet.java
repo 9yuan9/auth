@@ -15,14 +15,14 @@ import java.util.List;
 /**
  * Created by acer on 2017/8/4.
  */
-@WebServlet(name = "RoleServlet", value = "/addRole")
+@WebServlet(name = "RoleServlet", value = "/rolelist")
 public class RoleServlet extends HttpServlet {
     RoleinfoDao roleinfoDao = SqlSessionHelper.getSqlSession().getMapper(RoleinfoDao.class);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Roleinfo> allRole=roleinfoDao.findAll();
-        request.setAttribute("allRole",allRole);
-        request.getRequestDispatcher("addrole.jsp").forward(request, response);
+        List<Roleinfo> allRole = roleinfoDao.findAll();
+        request.setAttribute("allRole", allRole);
+        request.getRequestDispatcher("role.jsp").forward(request, response);
 
     }
 
