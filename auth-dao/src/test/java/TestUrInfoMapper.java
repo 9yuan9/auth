@@ -20,7 +20,7 @@ public class TestUrInfoMapper {
     public static void main(String[] args){
         SqlSession session= SqlSessionHelper.getSqlSession();
         UrInfoDao dao=session.getMapper(UrInfoDao.class);
-        UrInfo urinfo=new UrInfo();
+        /*UrInfo urinfo=new UrInfo();*/
 
         //增加指定用户号
 		/*System.out.println("利用Mybatis增加数据");
@@ -31,13 +31,13 @@ public class TestUrInfoMapper {
 		System.out.println("受到影响的行数为："+num);*/
 
         //根据用户号查询
-        /*List<UrInfo> list1=dao.findByUid("1");
+        /*List<UrInfo> list1=dao.findByUid(4);
         for(UrInfo obj : list1){
             System.out.println(obj);
         }*/
 
         //根据角色号查询
-        /*List<UrInfo> list2=dao.findByRid("4");
+        /*List<UrInfo> list2=dao.findByRid(4);
         for(UrInfo obj : list2){
             System.out.println(obj);
         }*/
