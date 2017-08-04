@@ -17,9 +17,9 @@ import java.util.List;
  */
 public interface UrInfoDao {
     public List<UrInfo> findAll();
-    public UrInfo findByUid(String uid);
-    public UrInfo findByRid(String rid);
+    public List<UrInfo> findByUid(int uid);
+    public List<UrInfo> findByRid(int rid);
     public int insertUid(UrInfo urinfo);
     public int updateUid(UrInfo urinfo);
-    public int deleteUid(String uid);
+    public int deleteUid(int uid);
 }

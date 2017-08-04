@@ -5,19 +5,19 @@
             resultType="UrInfo">
         select * from urinfo
     </select>
-    <select id="findByUid" parameterType="String" resultType="UrInfo">
+    <select id="findByUid" parameterType="int" resultType="UrInfo">
         select * from urinfo where uid=#{Uid}
     </select>
-    <select id="findByRid" parameterType="String" resultType="UrInfo">
+    <select id="findByRid" parameterType="int" resultType="UrInfo">
         select * from urinfo where rid=#{rid}
     </select>
     <insert id="insertUid" parameterType="UrInfo">
         insert into urinfo values(#{uid},#{rid})
     </insert>
     <update id="updateUid" parameterType="UrInfo">
-        update urinfo set uid=#{Uid} where cardId=#{Uid}
+        update urinfo set rid=#{rid} where uid=#{uid}
     </update>
-    <delete id="deleteUid" parameterType="String">
-        delete from urinfo where uid=#{Uid}
+    <delete id="deleteUid" parameterType="int">
+        delete from urinfo where uid=#{uid}
     </delete>
 </mapper>
