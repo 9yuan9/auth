@@ -19,6 +19,8 @@ import java.util.List;
 public interface Userinfodao {
     public List<Userinfo> findUser();
 
+    public List<Userinfo> findUserNameAndPwd(String username,String pwd);
+
     public int addUser(Userinfo userinfo);
 
     public int updateUser(Userinfo userinfo);

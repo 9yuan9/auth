@@ -20,6 +20,7 @@ import java.util.List;
 public interface ResourccesDao {
     public List<Resourcces> findAll();
     public Resourcces findByResourccessId(int ResourccessId);
+    public List<Resourcces> findAllResourccesByUid();
     public int addResourcces(Resourcces resourcces);
     public int updateResourccess(Resourcces resourcces);
     public int deleteResourccess(String rid);

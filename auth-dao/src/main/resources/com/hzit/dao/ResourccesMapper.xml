@@ -26,4 +26,7 @@
     <delete id="deleteResourcces" parameterType="String">
         delete from resourcces where rid=#{rid}
     </delete>
+    <select id="findAllResourccesByUid" parameterType="String" resultType="com.hzit.entity.Resourcces">
+        select * from resourcces
+    </select>
 </mapper>
