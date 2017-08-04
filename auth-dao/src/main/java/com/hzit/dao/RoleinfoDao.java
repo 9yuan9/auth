@@ -14,7 +14,7 @@ import java.util.List;
 public interface RoleinfoDao {
     public List<Roleinfo> findAll();
 
-    public Roleinfo findByRoleId(String roleId);
+    public Roleinfo findByRoleId(int roleId);
 
     public int addRole(Roleinfo roleinfo);
 
