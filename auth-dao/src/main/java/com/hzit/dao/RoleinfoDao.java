@@ -16,5 +16,5 @@ public interface RoleinfoDao {
     public Roleinfo findByRoleId(String roleId);
     public int addRole(Roleinfo roleinfo);
     public int updateRole(Roleinfo roleinfo);
-    public int deleteRole(String roleId);
+    public int deleteRole(int roleId);
 }

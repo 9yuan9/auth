@@ -11,7 +11,7 @@
     <select id="findAll" resultType="com.hzit.entity.Roleinfo">
         select * from roleinfo
     </select>
-    <select id="findByRoleId" parameterType="String" resultType="com.hzit.entity.Roleinfo">
+    <select id="findByRoleId" parameterType="int" resultType="com.hzit.entity.Roleinfo">
         select * from roleinfo where rid=#{rid}
     </select>
 
@@ -23,7 +23,7 @@
         update roleinfo set rname=#{rname} where rid=#{rid}
     </update>
 
-    <delete id="deleteRole" parameterType="String">
+    <delete id="deleteRole" parameterType="int">
         delete from roleinfo where rid=#{rid}
     </delete>
 </mapper>
