@@ -18,20 +18,19 @@ import java.util.List;
  */
 @WebServlet(name = "LoginServlet",value ="/login")
 public class LoginServlet extends HttpServlet {
-    Userinfodao dao = SqlSessionHelper.getSqlSession().getMapper(Userinfodao.class);
-
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        Userinfodao dao = SqlSessionHelper.getSqlSession().getMapper(Userinfodao.class);
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
         String name = request.getParameter("username");
         String pwd = request.getParameter("password");
         List<Userinfo> user = dao.findUserNameAndPwd(name, pwd);
-        if (user == null) {
-            out.print("<center><h1>登录失败！账户或密码错误！</h1></center>");
-        } else {
+        if (user != null) {
             request.setAttribute("username", user);
             request.getSession().setAttribute("username", user);
             response.sendRedirect("index.jsp");
+        } else {
+            out.print("<center><h1>登录失败！账户或密码错误！</h1></center>");
         }
         out.close();
     }

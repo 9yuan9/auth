@@ -27,4 +27,10 @@ public class SqlSessionHelper {
 		System.out.println("获取了session对象！");
 		return session;
 	}
+	/*public static void closeSession(){
+		if(session!=null){
+			session.close();
+		}
+		session=null;
+	}*/
 }

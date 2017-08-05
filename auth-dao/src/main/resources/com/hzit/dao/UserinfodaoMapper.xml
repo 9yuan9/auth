@@ -11,7 +11,7 @@
         select * from Userinfo
     </select>
     <select id="findUserNameAndPwd" parameterType="String" resultType="Userinfo">
-        select * from Userinfo WHERE uid=#{uname} AND upass=#{upass}
+        select * from Userinfo WHERE uname=#{uname} AND upass=#{upass}
     </select>
     <insert id="addUser" parameterType="Userinfo">
         insert into userinfo values(#{uid},#{uname},#{upass},#{ustatus})
@@ -19,7 +19,7 @@
     <update id="updateUser" parameterType="Userinfo">
         update userinfo set uname=#{uname},upass=#{upass},ustatus=#{ustatus} where uid=#{uid}
     </update>
-    <delete id="deleteUser" parameterType="String">
+    <delete id="deleteUser" parameterType="int">
         delete from userinfo where uid=#{uid}
     </delete>
 </mapper>
