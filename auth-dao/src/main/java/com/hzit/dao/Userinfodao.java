@@ -19,7 +19,7 @@ import java.util.List;
 public interface Userinfodao {
     public List<Userinfo> findUser();
 
-    public List<Userinfo> findUserNameAndPwd(String username,String pwd);
+    public Userinfo findUserNameAndPwd(Userinfo userinfo);
 
     public int addUser(Userinfo userinfo);
 

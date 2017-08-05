@@ -10,7 +10,7 @@
     <select id="findUser" resultType="Userinfo">
         select * from Userinfo
     </select>
-    <select id="findUserNameAndPwd" parameterType="String" resultType="Userinfo">
+    <select id="findUserNameAndPwd" parameterType="Userinfo" resultType="Userinfo">
         select * from Userinfo WHERE uname=#{uname} AND upass=#{upass}
     </select>
     <insert id="addUser" parameterType="Userinfo">

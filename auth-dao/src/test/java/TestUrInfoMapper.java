@@ -1,6 +1,8 @@
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.dao.UrInfoDao;
+import com.hzit.dao.Userinfodao;
 import com.hzit.entity.UrInfo;
+import com.hzit.entity.Userinfo;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -20,7 +22,8 @@ public class TestUrInfoMapper {
     public static void main(String[] args){
         SqlSession session= SqlSessionHelper.getSqlSession();
         UrInfoDao dao=session.getMapper(UrInfoDao.class);
-        /*UrInfo urinfo=new UrInfo();*/
+        Userinfodao dao1=session.getMapper(Userinfodao.class);
+        UrInfo urinfo=new UrInfo();
 
         //增加指定用户号
 		/*System.out.println("利用Mybatis增加数据");
@@ -61,5 +64,10 @@ public class TestUrInfoMapper {
         for(UrInfo obj : list){
             System.out.println(obj);
         }
+        Userinfo userinfo=new Userinfo();
+        userinfo.setUname("吴佳峰");
+        userinfo.setUpass("1234567");
+        Userinfo user = dao1.findUserNameAndPwd(userinfo);
+            System.out.println(user);
     }
 }
