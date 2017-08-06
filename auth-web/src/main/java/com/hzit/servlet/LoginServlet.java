@@ -2,7 +2,7 @@ package com.hzit.servlet;
 
 import com.hzit.dao.ResourccesDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.dao.user;
+import com.hzit.dao.UserinfoDao;
 import com.hzit.entity.Resourcces;
 import com.hzit.entity.Userinfo;
 
@@ -21,7 +21,7 @@ import java.util.List;
 @WebServlet(name = "LoginServlet",value ="/login")
 public class LoginServlet extends HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        user dao = SqlSessionHelper.getSqlSession().getMapper(user.class);
+        UserinfoDao dao = SqlSessionHelper.getSqlSession().getMapper(UserinfoDao.class);
         ResourccesDao resourccesDao=SqlSessionHelper.getSqlSession().getMapper(ResourccesDao.class);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
