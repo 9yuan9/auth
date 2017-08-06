@@ -22,4 +22,20 @@
     <delete id="deleteUser" parameterType="int">
         delete from userinfo where uid=#{uid}
     </delete>
+    <select id="findUserByUserId" parameterType="int" resultMap="userinfoMap">
+        SELECT * FROM userinfo A LEFT JOIN weixininfo B ON A.weixinhao=B.weixinhao
+        WHERE uid=#{uid}
+    </select>
+    <resultMap id="userinfoMap" type="com.hzit.entity.Userinfo">
+        <id column="uid" property="uid"></id>
+        <result column="uname" property="uname"></result>
+        <result column="upass" property="upass"></result>
+        <result column="ustatus" property="ustatus"></result>
+        <result column="createTime" property="createTime"></result>
+        <association property="weixinInfo" javaType="com.hzit.entity.WeixinInfo">
+            <id column="weixinhao" property="weixinhao"></id>
+            <result column="weixinnicheng" property="weixinnicheng"></result>
+            <result column="weixinimage" property="weixinimage"></result>
+        </association>
+    </resultMap>
 </mapper>

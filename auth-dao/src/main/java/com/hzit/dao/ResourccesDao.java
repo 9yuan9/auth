@@ -25,4 +25,5 @@ public interface ResourccesDao {
     public int updateResourccess(Resourcces resourcces);
     public int deleteResourccess(String rid);
     public List<Resourcces> findByResourccessByUid(int uid);
+    public List<Resourcces> findFirstResourcces();
 }

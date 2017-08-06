@@ -23,14 +23,16 @@ public class SqlSessionHelper {
 		}
 	}
 	public static SqlSession getSqlSession(){
-		session=factory.openSession();
-		System.out.println("获取了session对象！");
+		if(session==null) {
+			session = factory.openSession();
+			System.out.println("获取了session对象！");
+		}
 		return session;
 	}
-	/*public static void closeSession(){
-		if(session!=null){
+	public static void closeSession() {
+		if (session != null) {
 			session.close();
+			session = null;
 		}
-		session=null;
-	}*/
+	}
 }

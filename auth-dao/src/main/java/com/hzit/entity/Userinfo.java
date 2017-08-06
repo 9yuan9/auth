@@ -15,6 +15,22 @@ public class Userinfo {
     private String uname;
     private String upass;
     private String ustatus;
+    private String weixinhao;
+    private String createTime;
+    private WeixinInfo weixinInfo;
+
+    @Override
+    public String toString() {
+        return "Userinfo{" +
+                "uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", upass='" + upass + '\'' +
+                ", ustatus='" + ustatus + '\'' +
+                ", weixinhao='" + weixinhao + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", weixinInfo=" + weixinInfo +
+                '}';
+    }
 
     public int getUid() {
         return uid;
@@ -48,13 +64,27 @@ public class Userinfo {
         this.ustatus = ustatus;
     }
 
-    @Override
-    public String toString() {
-        return "Userinfo{" +
-                "uid=" + uid +
-                ", uname='" + uname + '\'' +
-                ", upass='" + upass + '\'' +
-                ", ustatus='" + ustatus + '\'' +
-                '}';
+    public String getWeixinhao() {
+        return weixinhao;
+    }
+
+    public void setWeixinhao(String weixinhao) {
+        this.weixinhao = weixinhao;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public WeixinInfo getWeixinInfo() {
+        return weixinInfo;
+    }
+
+    public void setWeixinInfo(WeixinInfo weixinInfo) {
+        this.weixinInfo = weixinInfo;
     }
 }

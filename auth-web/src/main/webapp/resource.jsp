@@ -24,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
+      <a href="resourcelist" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -48,83 +48,47 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
+      <c:forEach var="r" items="${reslist}">
+        <c:if test="${r.parentID==null}">
+          <div class="sidebar-nav">
+            <div class="sidebar-title">
+              <a href="#">
+                <span class="icon"><b class="fl icon-arrow-down"></b></span>
+                <span class="text-normal">${r.rname}</span>
+              </a>
+            </div>
+            <ul class="sidebar-trans">
+              <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
+              <c:forEach var="child_r" items="${reslist}">
+                <c:if test="${child_r.parentID==r.rid}">
+                  <li>
+                    <a href="#">
+                      <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+                      <span class="text-normal">${child_r.rname}</span>
+                    </a>
+                  </li>
+                </c:if>
+              </c:forEach>
 
-
-        </ul>
-      </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
-        </ul>
-      </div>
+            </ul>
+          </div>
+        </c:if>
+      </c:forEach>
       <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
     </div>
   </div>
+
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">用户管理
+          <h6 class="layout padding-left manage-head-con">资源管理平台与发布
             <span class="fr text-small text-normal padding-top">发布时间：2016-07-08</span>
             <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
+          <div class="margin-tb manage-detail-con clearfix">
+            <a class="h5 margin-large-left custom fl" href="toAddResource">新建资源</a>
+          </div>
         </div>
       </div>
       <div class="authority-content">
@@ -163,7 +127,7 @@
                   ${r.resorderno}
               </div>
               <div class="td w20">
-                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
+                <a href="deleteResource.action?id=${r.rid}"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
             </c:forEach>

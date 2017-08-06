@@ -17,6 +17,7 @@ import java.util.List;
  * +---------------------------------Oooo---------------------------------------+
  */
 public interface UserinfoDao {
+    Userinfo findUserByUserId(int userId);
     public List<Userinfo> findUser();
 
     public Userinfo findUserNameAndPwd(Userinfo userinfo);
@@ -26,6 +27,8 @@ public interface UserinfoDao {
     public int updateUser(Userinfo userinfo);
 
     public int deleteUser(String uid);
+
+    public List<Userinfo> findAllUserByPage(Integer startRow,Integer count);
 
 
 }

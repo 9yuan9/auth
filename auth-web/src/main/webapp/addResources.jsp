@@ -39,7 +39,7 @@
 					<li class="fl topbar-info-item">
 					<div class="dropdown">
 						<a href="#" class="topbar-btn">
-						<span class="fl text-normal">小朱</span>
+						<span class="fl text-normal">${username.uname}</span>
 						<span class="icon-arrow-down"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -65,7 +65,7 @@
 					<div class="manage-head">
 						<h6 class="padding-left manage-head-con">新增模块</h6>
 					</div>
-					<form name="setp0" action="#" method="post" autocomplete="off">
+					<form name="setp0" action="addresource" method="post" autocomplete="off">
 						<div class="basic-info-detail clearfix">
 
 							<div class="unit-style padding-big-lr clearfix">
@@ -75,7 +75,7 @@
 										模块名称
 									</p>
 									<div class="content-right-zoon">
-										<input class="width-main input" type="text" name="legal_person" datatype="*" value="">
+										<input class="width-main input" type="text" name="rname" datatype="*" value="">
 									</div>
 								</div>
 								<div class="real-name-con height-main margin-top-25">
@@ -83,7 +83,7 @@
 										模块路径
 									</p>
 									<div class="content-right-zoon">
-										<input class="width-main input" type="text" name="legal_idcard_number" datatype="*" value="">
+										<input class="width-main input" type="text" name="rul" datatype="*" value="">
 									</div>
 								</div>
 								<div class="real-name-con height-main margin-top-25">
@@ -91,8 +91,10 @@
 										上级模块
 									</p>
 									<div class="content-right-zoon">
-										<select class="width-main select ">
-											<option value="模块值">模块名称</option>
+										<select class="width-main select " name="resource">
+											<c:forEach var="m" items="${firstlist}">
+											<option value="${m.rid}">${m.rname}</option>
+											</c:forEach>
 										</select>
 
 									</div>
@@ -102,7 +104,15 @@
 										模块序号
 									</p>
 									<div class="content-right-zoon">
-										<input class="width-main input" type="text" name="legal_idcard_number" datatype="*" value="">
+										<input class="width-main input" type="text" name="rorderno" datatype="*" value="">
+									</div>
+								</div>
+								<div class="real-name-con height-main margin-top-25">
+									<p class="content-left-zoon">
+										模块描述
+									</p>
+									<div class="content-right-zoon">
+										<input class="width-main input" type="text" name="description" datatype="*" value="">
 									</div>
 								</div>
 

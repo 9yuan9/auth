@@ -24,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="index.html" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
+      <a href="allResource" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
     </div>
   </div>
   <div class="topbar-info">

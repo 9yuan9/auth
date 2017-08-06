@@ -11,6 +11,9 @@
     <select id="findAll" resultType="com.hzit.entity.Resourcces">
         select * from resourcces
     </select>
+    <select id="findFirstResourcces" resultType="com.hzit.entity.Resourcces">
+        select * from resourcces WHERE parentId is NULL
+    </select>
     <select id="findByResourccesId" parameterType="String" resultType="com.hzit.entity.Resourcces">
         select * from resourcces where rid=#{rid}
     </select>
@@ -21,14 +24,15 @@
     </select>
 
     <insert id="addResourcces" parameterType="com.hzit.entity.Resourcces">
-        insert into resourcces values(null,#{rname})
+        insert into resourcces values(null,#{rname},#{resurl},#{resorderno},#{redsdes},
+        #{createTime},#{updatetime},#{createMan},#{updateMan},#{parentID})
     </insert>
 
     <update id="updateResourcces" parameterType="com.hzit.entity.Resourcces">
         update resourcces set rname=#{rname} where rid=#{rid}
     </update>
 
-    <delete id="deleteResourcces" parameterType="String">
+    <delete id="deleteResourccess" parameterType="String">
         delete from resourcces where rid=#{rid}
     </delete>
     <select id="findAllResourccesByUid" parameterType="String" resultType="com.hzit.entity.Resourcces">

@@ -61,22 +61,25 @@ public class TestUrInfoMapper {
 		System.out.println("受到影响的行数为："+num);*/
 
         //查询所有用户号的信息
-        System.out.println("所有用户号的信息如下：");
+        /*System.out.println("所有用户号的信息如下：");
         List<UrInfo> list=dao.findAll();
         for(UrInfo obj : list){
             System.out.println(obj);
-        }
+        }*/
         Userinfo userinfo=new Userinfo();
-        userinfo.setUname("吴佳峰");
+        /*userinfo.setUname("吴佳峰");
         userinfo.setUpass("1234567");
         Userinfo user = dao1.findUserNameAndPwd(userinfo);
-            System.out.println(user);
+            System.out.println(user);*/
+        Userinfo user1=dao1.findUserByUserId(2);
+        System.out.println(user1);
 
-        ResourccesDao dao3=session.getMapper(ResourccesDao.class);
+        /*ResourccesDao dao3=session.getMapper(ResourccesDao.class);
         List<Resourcces> list1=dao3.findByResourccessByUid(2);
 
         for(Resourcces obj : list1){
             System.out.println(obj);
         }
+        */
     }
 }
