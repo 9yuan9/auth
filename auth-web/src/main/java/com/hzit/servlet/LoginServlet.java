@@ -31,11 +31,12 @@ public class LoginServlet extends HttpServlet {
         userinfo.setUpass(pwd);
         Userinfo user=dao.findUserNameAndPwd(userinfo);
         if (user != null) {
-            /*request.setAttribute("username", user);
-            request.getSession().setAttribute("username", user);*/
-            response.sendRedirect("index.jsp");
+            request.setAttribute("username", user);
+            request.getSession().setAttribute("username", user);
+            response.sendRedirect("resourcelist");
         } else {
-            out.print("<center><h1>登录失败！账户或密码错误！</h1></center>");
+            out.print("<center><h1>登录失败！账户或密码错误！</h1><br>" +
+                    "<a href='login.html'>点此返回</a></center>");
         }
         out.close();
     }

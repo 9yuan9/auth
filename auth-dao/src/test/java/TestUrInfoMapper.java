@@ -1,6 +1,8 @@
+import com.hzit.dao.ResourccesDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.dao.UrInfoDao;
 import com.hzit.dao.Userinfodao;
+import com.hzit.entity.Resourcces;
 import com.hzit.entity.UrInfo;
 import com.hzit.entity.Userinfo;
 import org.apache.ibatis.session.SqlSession;
@@ -69,5 +71,12 @@ public class TestUrInfoMapper {
         userinfo.setUpass("1234567");
         Userinfo user = dao1.findUserNameAndPwd(userinfo);
             System.out.println(user);
+
+        ResourccesDao dao3=session.getMapper(ResourccesDao.class);
+        List<Resourcces> list1=dao3.findByResourccessByUid(2);
+
+        for(Resourcces obj : list1){
+            System.out.println(obj);
+        }
     }
 }

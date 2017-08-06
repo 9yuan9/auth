@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">${username.uname}</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -131,38 +132,42 @@
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w20">
-                管理员
+                资源名称
               </div>
               <div class="th w20">
-                所属于角色
+                资源UR
               </div>
               <div class="th w20">
-                状态
+                资源描述
               </div>
               <div class="th w20">
-                创建时间
+                资源序号
               </div>
               <div class="th w20">
                 操作
               </div>
             </div>
+
+            <c:forEach var="r" items="${allresource}">
             <div class="tr clearfix border-bottom-none">
               <div class="td w20">
-                吴文杰
+                ${r.rname}
               </div>
               <div class="td w20">
-                管理员
+                  ${r.resurl}
               </div>
               <div class="td w20">
-                水电费
+                  ${r.redsdes}
               </div>
               <div class="td w20">
-                2016-01-10 11:54:07
+                  ${r.resorderno}
               </div>
               <div class="td w20">
                 <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
+            </c:forEach>
+
           </div>
         </div>
         <div class="show-page padding-big-right">

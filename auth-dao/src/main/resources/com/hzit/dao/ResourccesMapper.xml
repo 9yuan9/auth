@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- mapper 标签 用于指定配置文件所属的接口名，通过 namespace来指定 -->
 
-<mapper namespace="com.hzit.dao.RoleinfoDao">
+<mapper namespace="com.hzit.dao.ResourccesDao">
 
     <!-- select 标签专门指定查询方法,其中 id属性代表方法名
         parameterType 代表方法的参数数据类型
@@ -13,6 +13,11 @@
     </select>
     <select id="findByResourccesId" parameterType="String" resultType="com.hzit.entity.Resourcces">
         select * from resourcces where rid=#{rid}
+    </select>
+    <select id="findByResourccessByUid" parameterType="int" resultType="com.hzit.entity.Resourcces">
+        SELECT DISTINCT t1.rid,rname,resurl,resorderno,redsdes,createTime,updatetime,createMan,updateMan,parentID
+        FROM resourcces t1 JOIN roleresource t2 ON t1.rid= t2.resourceid
+                           JOIN urinfo t3 ON t2.roleid=t3.rid WHERE uid=#{uid};
     </select>
 
     <insert id="addResourcces" parameterType="com.hzit.entity.Resourcces">
