@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +33,7 @@
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
-            <span class="fl text-normal">小朱</span>
+            <span class="fl text-normal">${username.uname}</span>
             <span class="icon-arrow-down"></span>
           </a>
           <ul class="dropdown-menu">
@@ -47,75 +48,36 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
+      <c:forEach var="r" items="${reslist}">
+        <c:if test="${r.parentID==null}">
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
+            <span class="text-normal">${r.rname}</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
+          <c:forEach var="child_r" items="${reslist}">
+            <c:if test="${child_r.parentID==r.rid}">
           <li>
             <a href="#">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
+              <span class="text-normal">${child_r.rname}</span>
             </a>
           </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
+            </c:if>
+          </c:forEach>
 
         </ul>
       </div>
-      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
-      <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <div class="sidebar-nav">
-        <div class="sidebar-title">
-          <a href="#">
-            <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">一级菜单</span>
-          </a>
-        </div>
-        <ul class="sidebar-trans">
-          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">二级菜单</span>
-            </a>
-          </li>
-
-
-        </ul>
-      </div>
+        </c:if>
+      </c:forEach>
       <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
     </div>
   </div>
+
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">

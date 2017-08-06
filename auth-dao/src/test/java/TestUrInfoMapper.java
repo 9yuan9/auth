@@ -1,7 +1,7 @@
 import com.hzit.dao.ResourccesDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.dao.UrInfoDao;
-import com.hzit.dao.Userinfodao;
+import com.hzit.dao.user;
 import com.hzit.entity.Resourcces;
 import com.hzit.entity.UrInfo;
 import com.hzit.entity.Userinfo;
@@ -24,7 +24,7 @@ public class TestUrInfoMapper {
     public static void main(String[] args){
         SqlSession session= SqlSessionHelper.getSqlSession();
         UrInfoDao dao=session.getMapper(UrInfoDao.class);
-        Userinfodao dao1=session.getMapper(Userinfodao.class);
+        user dao1=session.getMapper(user.class);
         UrInfo urinfo=new UrInfo();
 
         //增加指定用户号

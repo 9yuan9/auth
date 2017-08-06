@@ -24,8 +24,7 @@ public class ResourceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Userinfo user=(Userinfo)request.getSession().getAttribute("username");
         ResourccesDao dao = SqlSessionHelper.getSqlSession().getMapper(ResourccesDao.class);
-        List<Resourcces> resourcces=new ArrayList<Resourcces>();
-        resourcces=dao.findByResourccessByUid(user.getUid());
+        List<Resourcces> resourcces=dao.findByResourccessByUid(user.getUid());
         request.setAttribute("allresource",resourcces);
 
         request.getRequestDispatcher("resource.jsp").forward(request,response);

@@ -19,6 +19,11 @@ public class Resourcces {
     private String resurl;
     private int resorderno;
     private String redsdes;
+    private String createTime;
+    private String updatetime;
+    private String createMan;
+    private String updateMan;
+    private String parentID;
 
     public int getRid() {
         return rid;
@@ -99,12 +104,6 @@ public class Resourcces {
     public void setParentID(String parentID) {
         this.parentID = parentID;
     }
-
-    private String createTime;
-    private String updatetime;
-    private String createMan;
-    private String updateMan;
-    private String parentID;
 
     @Override
     public String toString() {

@@ -16,7 +16,7 @@ import java.util.List;
  * |    @description   用户接口
  * +---------------------------------Oooo---------------------------------------+
  */
-public interface Userinfodao {
+public interface user {
     public List<Userinfo> findUser();
 
     public Userinfo findUserNameAndPwd(Userinfo userinfo);
