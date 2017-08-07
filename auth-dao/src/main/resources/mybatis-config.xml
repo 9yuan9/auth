@@ -23,5 +23,6 @@
         <mapper resource="com/hzit/dao/UrInfoDaoMapper.xml" />
         <mapper resource="com/hzit/dao/UserinfodaoMapper.xml" />
         <mapper resource="com/hzit/dao/ResourccesMapper.xml" />
+        <mapper resource="com/hzit/dao/RoleinfoMapper.xml"/>
     </mappers>
 </configuration>

@@ -1,9 +1,11 @@
 package com.hzit.servlet;
 
 import com.hzit.dao.ResourccesDao;
+import com.hzit.dao.RoleinfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.dao.UserinfoDao;
 import com.hzit.entity.Resourcces;
+import com.hzit.entity.Roleinfo;
 import com.hzit.entity.Userinfo;
 
 import javax.servlet.ServletException;
@@ -23,6 +25,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         UserinfoDao dao = SqlSessionHelper.getSqlSession().getMapper(UserinfoDao.class);
         ResourccesDao resourccesDao=SqlSessionHelper.getSqlSession().getMapper(ResourccesDao.class);
+        RoleinfoDao role=SqlSessionHelper.getSqlSession().getMapper(RoleinfoDao.class);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
@@ -35,9 +38,11 @@ public class LoginServlet extends HttpServlet {
         Userinfo user=dao.findUserNameAndPwd(userinfo);
         if (user != null) {
             List<Resourcces> reslist =resourccesDao.findByResourccessByUid(user.getUid());
+            List<Roleinfo> roleList =role.findAll();
             request.setAttribute("username", user);
             request.getSession().setAttribute("username", user);
             request.getSession().setAttribute("reslist", reslist);
+            request.getSession().setAttribute("roleList", roleList);
             response.sendRedirect("index.jsp");
         } else {
             out.print("<center><h1>登录失败！账户或密码错误！</h1><br>" +

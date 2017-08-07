@@ -28,8 +28,10 @@
         #{createTime},#{updatetime},#{createMan},#{updateMan},#{parentID})
     </insert>
 
-    <update id="updateResourcces" parameterType="com.hzit.entity.Resourcces">
-        update resourcces set rname=#{rname} where rid=#{rid}
+    <update id="updateResourccess" parameterType="com.hzit.entity.Resourcces">
+        update resourcces set rname=#{rname},resurl=#{resurl},resorderno=#{resorderno},
+        redsdes=#{redsdes},createTime=#{createTime},updatetime=#{updatetime},
+        createMan=#{createMan},updateMan=#{updateMan},parentID=#{parentID} where rid=#{rid}
     </update>
 
     <delete id="deleteResourccess" parameterType="String">

@@ -24,7 +24,7 @@
       <a href="#" class="topbar-logo fl">
         <span><img src="Images/logo.png" width="20" height="20"/></span>
       </a>
-      <a href="allResource" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
+      <a href="#" class="topbar-home-link topbar-btn text-center fl"><span>管理权限管理系统</span></a>
     </div>
   </div>
   <div class="topbar-info">
@@ -62,7 +62,7 @@
           <c:forEach var="child_r" items="${reslist}">
             <c:if test="${child_r.parentID==r.rid}">
           <li>
-            <a href="#">
+            <a href="${child_r.resurl}">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
               <span class="text-normal">${child_r.rname}</span>
             </a>

@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,13 +82,10 @@
     <div class="authority">
       <div class="authority-head">
         <div class="manage-head">
-          <h6 class="layout padding-left manage-head-con">资源管理平台与发布
+          <h6 class="layout padding-left manage-head-con">角色管理
             <span class="fr text-small text-normal padding-top">发布时间：2016-07-08</span>
             <span class="fr margin-large-right padding-top text-small text-normal">最新版本：<em class="text-main">2.4.0.160708</em></span>
           </h6>
-          <div class="margin-tb manage-detail-con clearfix">
-            <a class="h5 margin-large-left custom fl" href="toAddResource">新建资源</a>
-          </div>
         </div>
       </div>
       <div class="authority-content">
@@ -96,49 +93,29 @@
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w20">
-                资源名称
+                角色编号
               </div>
               <div class="th w20">
-                资源UR
+                角色名称
               </div>
               <div class="th w20">
-                资源描述
-              </div>
-              <div class="th w10">
-                资源序号
-              </div>
-              <div class="th w15">
-                创建时间
-              </div>
-              <div class="th w15">
                 操作
               </div>
             </div>
-
-            <c:forEach var="r" items="${allresource}">
+            <c:forEach var="r" items="${allRole}">
             <div class="tr clearfix border-bottom-none">
               <div class="td w20">
-                ${r.rname}
+                  ${r.rid}
               </div>
               <div class="td w20">
-                  ${r.resurl}
+                  ${r.rname}
               </div>
               <div class="td w20">
-                  ${r.redsdes}
-              </div>
-              <div class="td w10">
-                  ${r.resorderno}
-              </div>
-              <div class="td w15">
-                  ${r.createTime}
-              </div>
-              <div class="td w15">
-                <a href="toUpdateResource?id=${r.rid}"  class="button-word2 btn_ajax_confirm">编辑</a>
-                <a href="deleteResource.action?id=${r.rid}"  class="button-word2 btn_ajax_confirm">删除</a>
+                <a href="#"  class="button-word2 btn_ajax_confirm">编辑</a>
+                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
             </c:forEach>
-
           </div>
         </div>
         <div class="show-page padding-big-right">
