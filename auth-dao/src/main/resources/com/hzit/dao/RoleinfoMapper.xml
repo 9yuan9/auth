@@ -23,7 +23,7 @@
         update roleinfo set rname=#{rname} where rid=#{rid}
     </update>
 
-    <delete id="deleteRole" parameterType="int">
+    <delete id="deleteRole" parameterType="String">
         delete from roleinfo where rid=#{rid}
     </delete>
 </mapper>

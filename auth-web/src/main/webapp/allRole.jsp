@@ -112,7 +112,7 @@
               </div>
               <div class="td w20">
                 <a href="#"  class="button-word2 btn_ajax_confirm">编辑</a>
-                <a href="#"  class="button-word2 btn_ajax_confirm">删除</a>
+                <a href="deleteRole.action?id=${r.rid}"  class="button-word2 btn_ajax_confirm">删除</a>
               </div>
             </div>
             </c:forEach>
